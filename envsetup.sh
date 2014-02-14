@@ -74,8 +74,8 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^AOSB_") ; then
-       AOSB_BUILD=$(echo -n $1 | sed -e 's/^AOSB_//g')
+    if (echo -n $1 | grep -q -e "^aosb_") ; then
+       AOSB_BUILD=$(echo -n $1 | sed -e 's/^aosb_//g')
        export BUILD_NUMBER=$((date +%s%N ; echo $AOSB_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10)
     else
        AOSB_BUILD=
