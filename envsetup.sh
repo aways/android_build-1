@@ -526,7 +526,7 @@ function breakfast()
             lunch $target
         else
             # This is probably just the AOSB model name
-            lunch AOSB_$target-userdebug
+            lunch aosb_$target-userdebug
         fi
     fi
     return $?
