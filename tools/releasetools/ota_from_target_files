@@ -471,6 +471,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("# Developer: http://codexc.com/me #");
   script.Print("#                                 #");
   script.Print("###################################");
+  
+  device = GetBuildProp("ro.aosb.device", OPTIONS.info_dict)
+  script.Print("Device: %s"%(device));
+  script.Print("###################################");
 
   if OPTIONS.backuptool:
     script.Mount("/system")
